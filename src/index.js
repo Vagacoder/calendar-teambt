@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Calendar from './Calendar';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const events = [
+    {
+        balance: 0,
+        budget: 0,
+        client: "client 1",
+        date: new Date(),
+        id: "123456",
+        lastModifiedDate: new Date(),
+        name: "Event 1",
+        planner: "Planner 1",
+        progress: "INQUIRY",
+        total: 1000,
+        type: "WEDDING",
+        status: 'LEAD',
+    },
+]
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<Calendar events={events} />, document.getElementById('root'));

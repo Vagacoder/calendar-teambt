@@ -1,3 +1,13 @@
+# Calendar Library for BloomTrac Team
+## 2019-12-13
+### Based on [Full-Calendar](https://fullcalendar.io/)
+
+## 2019-12-16
+1. Import code from original project
+2. Translate from Typescript to Javascript
+3. Tested with one dummy date.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
