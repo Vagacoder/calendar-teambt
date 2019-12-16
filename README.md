@@ -6,6 +6,8 @@
 1. Import code from original project
 2. Translate from Typescript to Javascript
 3. Tested with one dummy date.
+4. Remove original typescript source file.
+5. Build setup
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
