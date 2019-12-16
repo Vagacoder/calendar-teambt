@@ -1,6 +1,6 @@
 {
   "name": "calendar-teambt",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "calendar for bloomtrac team",
   "private": false,
   "main": "dist/index.js",
