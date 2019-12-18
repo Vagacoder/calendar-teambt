@@ -1,0 +1,13 @@
+
+
+@media only screen and (max-width:800px) {
+    .fc-dayGrid-view .fc-body .fc-row {
+        min-height: 0;
+        height: 3em !important;
+        overflow: hidden;
+    }
+}
+
+.fc-scroller, .fc-day-grid-container {
+    height: auto !important;
+}

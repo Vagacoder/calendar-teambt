@@ -112,13 +112,13 @@
   margin-top: 5px;
 }
 
-/* Full Calendar CSS starts here */
+/* !! Full Calendar CSS starts here */
 .fc {
   font-family: Roboto, sans-serif;
   direction: ltr;
   text-align: left;
-  min-width: 700px;
-  width: 70%;
+  min-width: 100px;
+  width: 50%;
 }
 
 .fc-rtl {
@@ -954,6 +954,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 .fc-toolbar.fc-header-toolbar {
   margin-bottom: 1.5em;
   font-size: 80%;
+  text-align: center;
 }
 
 .fc-toolbar.fc-footer-toolbar {
@@ -993,6 +994,31 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   position: relative;
   z-index: 1;
 }
+
+/* !! responosive to smaller screen (mobile device) */
+@media only screen and (max-width:800px) {
+  .fc{
+    min-width: 15em;
+    width: 50%;
+  }
+  .fc-toolbar.fc-header-toolbar  {
+    flex-direction: column;
+  }
+  .fc-center{
+    padding-bottom:8px;
+    padding-top: 8px;
+    font-size: 0.75em;
+  }
+  .fc-row.fc-widget-header {
+    font-size: 0.85em;
+  }
+  .fc-day-number{
+    font-size: 0.85em;
+  }
+  .fc-content{
+    font-size: 0.85em;
+  }
+  }
 
 @media print {
   .fc {

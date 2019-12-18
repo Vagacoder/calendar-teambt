@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import {
   ExpansionPanel,
   ExpansionPanelSummary,
@@ -8,40 +7,7 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/styles";
-import { EventCustomRender } from "./EventCustomRender";
-
-import momentPlugin from "@fullcalendar/moment";
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-
-import "./css/calendar.css";
-import "./css/dayGrid.css";
-import "./css/list.css";
-import "./css/timeGrid.css";
-import EventSummary from "./EventSummary";
-
-const timeZoneString = "local";
-const timeFormatString = "MMMM DD YYYY";
-
-const eventTimeFormat = {
-  hour: "numeric",
-  minute: "2-digit",
-  meridiem: "short"
-};
-
-const headers = {
-  left: "dayGridMonth,timeGridWeek,timeGridDay",
-  center: "title",
-  right: "prevYear,prev,today,next,nextYear"
-};
-
-const plugins = [dayGridPlugin, timeGridPlugin, momentPlugin];
-
-const views = {
-  listWeek: { buttonText: "Week list" },
-  listMonth: { buttonText: "Month list" }
-};
+import FullCalendar from './FullCalendar';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -59,18 +25,10 @@ const useStyles = makeStyles(theme => ({
 
 const Calendar = props => {
   const classes = useStyles({});
-  const { events } = props;
+  const { events, onEventClick } = props;
 
-  const [showEventSummary, setShowEventSummary] = React.useState(false);
-
-  const onClickEvent = () => {};
-
-  const onMouseEnter = arg => {
-    if (!showEventSummary) {
-      setShowEventSummary(true);
-    }
-
-    arg.el.style.cursor = "pointer";
+  const onClickEvent = (clickInfo) => {
+    onEventClick(clickInfo.event._def.publicId);
   };
 
   return (
@@ -87,36 +45,11 @@ const Calendar = props => {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.calendarContainer}>
           <FullCalendar
-            aspectRatio={2}
-            allDayText="Whole Day"
-            defaultView="dayGridMonth"
-            eventClick={onClickEvent}
-            eventLimit={true}
-            eventLimitClick="popover"
-            eventLimitText="more events"
-            eventMouseEnter={onMouseEnter}
+            onClickEvent={onClickEvent}
             events={events}
-            eventTimeFormat={eventTimeFormat}
-            dayPopoverFormat={{
-              weekday: "long",
-              month: "long",
-              day: "numeric"
-            }}
-            fixedWeekCount={false}
-            header={headers}
-            plugins={plugins}
-            timeZone={timeZoneString}
-            titleFormat={timeFormatString}
-            views={views}
           />
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <EventSummary
-        open={showEventSummary}
-        onClose={() => setShowEventSummary(false)}
-      >
-        {props.children}
-      </EventSummary>
     </React.Fragment>
   );
 };
