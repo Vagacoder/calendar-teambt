@@ -28,11 +28,6 @@ const headers = {
 
 const plugins = [dayGridPlugin, timeGridPlugin, momentPlugin];
 
-const views = {
-    listWeek: { buttonText: "Week list" },
-    listMonth: { buttonText: "Month list" }
-};
-
 const FullCalendar = props => {
     const { onClickEvent, events } = props;
 
@@ -56,7 +51,6 @@ const FullCalendar = props => {
         plugins={plugins}
         timeZone={timeZoneString}
         titleFormat={timeFormatString}
-        views={views}
     />
 }
 

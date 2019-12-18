@@ -8,6 +8,10 @@
     }
 }
 
-.fc-scroller, .fc-day-grid-container {
+.fc-scroller.fc-day-grid-container {
     height: auto !important;
+}
+
+.fc-scroller.fc-time-grid-container {
+    height: 16em !important;
 }
