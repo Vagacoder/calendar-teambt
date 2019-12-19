@@ -702,6 +702,7 @@ TODO: more distinction between this file and common.css
   background: #eee;
 }
 
+/* !! today */
 .fc-unthemed td.fc-today {
   background: rgba(104, 242, 247, 0.15);;
 }
@@ -804,6 +805,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 }
 
 /* theme */
+/* !! buttons */
 .fc-button {
   display: inline-block;
   font-weight: 400;
@@ -998,8 +1000,8 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 /* !! responosive to smaller screen (mobile device) */
 @media only screen and (max-width:800px) {
   .fc{
-    min-width: 15em;
-    width: 50%;
+    min-width: 18em;
+    width: 60%;
   }
   .fc-toolbar.fc-header-toolbar  {
     flex-direction: column;
@@ -1007,13 +1009,13 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   .fc-center{
     padding-bottom:8px;
     padding-top: 8px;
-    font-size: 0.75em;
+    font-size: 0.80em;
   }
   .fc-row.fc-widget-header {
-    font-size: 0.85em;
+    font-size: 0.60em;
   }
   .fc-day-number{
-    font-size: 0.85em;
+    font-size: 0.75em;
   }
   .fc-content{
     font-size: 0.85em;

@@ -1,17 +1,55 @@
 
+/* table aligned to left border when screen is extra-small */
+@media only screen and (max-width:300px) {
+    .MuiExpansionPanelDetails-root.makeStyles-calendarContainer-2{
+        overflow-x: scroll;
+    }
+}
 
+/* for small and medium size screen */
 @media only screen and (max-width:800px) {
+    /* decrease the row height */
     .fc-dayGrid-view .fc-body .fc-row {
         min-height: 0;
         height: 3em !important;
         overflow: hidden;
     }
+
+    /* for small and medium size screen, overlapped event bar is full length */
+    .fc-timeGridWeek-view .fc-time-grid-event.fc-event.fc-start.fc-end{
+        margin-right: 0 !important;
+        border: 1px solid lightgrey;
+    }
+
+    /* for small and medium size screen, overlapping event bar leave 
+    some space at left side to view overlapped event bar  */
+    .fc-timeGridWeek-view .fc-time-grid-event.fc-event.fc-start.fc-end.fc-time-grid-event-inset{
+        left:10px !important;
+    }
 }
 
+/* remove right side vertial bar of widget header, in week and day views */
+.fc-row.fc-widget-header{
+    border-right: 0px;
+}
+
+/* remove the the scroll bar from month view */
 .fc-scroller.fc-day-grid-container {
     height: auto !important;
 }
 
+/* limit the height of week and day views */
 .fc-scroller.fc-time-grid-container {
     height: 16em !important;
 }
+
+.fc-time-grid-event.fc-event.fc-start.fc-end{
+    margin-right: 15% !important;
+}
+
+/* decrease left blank space of overlapping event bar in day view */
+.fc-time-grid-event.fc-event.fc-start.fc-end.fc-time-grid-event-inset{
+    left: 35% !important;
+    margin-right: 0 !important;
+}
+
