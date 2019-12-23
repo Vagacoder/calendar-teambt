@@ -1,4 +1,7 @@
+/* !! NOTE: Button background colors are overrided in Calendar.js*/
+/* !! NOTE: Active button background colors are overrided in FullCalendar.js*/
 
+/* !! responosive to smalle screen and mobile device) */
 /* table aligned to left border when screen is extra-small */
 @media only screen and (max-width:300px) {
     .MuiExpansionPanelDetails-root.makeStyles-calendarContainer-2{
@@ -8,6 +11,29 @@
 
 /* for small and medium size screen */
 @media only screen and (max-width:800px) {
+    .fc{
+        min-width: 18em;
+        width: 60%;
+      }
+      .fc-toolbar.fc-header-toolbar  {
+        flex-direction: column;
+      }
+      .fc-center{
+        padding-bottom:8px;
+        padding-top: 8px;
+        font-size: 0.80em;
+      }
+      .fc-row.fc-widget-header {
+        font-size: 0.60em;
+      }
+      .fc-day-number{
+        font-size: 0.75em;
+      }
+      .fc-content{
+        font-size: 0.85em;
+      }
+
+
     /* decrease the row height */
     .fc-dayGrid-view .fc-body .fc-row {
         min-height: 0;
@@ -28,6 +54,7 @@
     }
 }
 
+/* !! other settings */
 /* remove right side vertial bar of widget header, in week and day views */
 .fc-row.fc-widget-header{
     border-right: 0px;

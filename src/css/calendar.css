@@ -832,14 +832,15 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 .fc-button:focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.12rem rgba(0, 85, 170, 0.25);
-  box-shadow: 0 0 0 0.12rem rgba(0, 85, 170, 0.25);
+  box-shadow: 0 0 0 0.12rem rgba(2550, 85, 170, 0.95);
 }
 
 .fc-button:disabled {
-  opacity: 0.70;
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
-/* "primary" coloring */
+/* !! button "primary" coloring */
 .fc-button-primary {
   color: #fff;
   background-color: rgb(96, 125, 139);
@@ -996,31 +997,6 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   position: relative;
   z-index: 1;
 }
-
-/* !! responosive to smaller screen (mobile device) */
-@media only screen and (max-width:800px) {
-  .fc{
-    min-width: 18em;
-    width: 60%;
-  }
-  .fc-toolbar.fc-header-toolbar  {
-    flex-direction: column;
-  }
-  .fc-center{
-    padding-bottom:8px;
-    padding-top: 8px;
-    font-size: 0.80em;
-  }
-  .fc-row.fc-widget-header {
-    font-size: 0.60em;
-  }
-  .fc-day-number{
-    font-size: 0.75em;
-  }
-  .fc-content{
-    font-size: 0.85em;
-  }
-  }
 
 @media print {
   .fc {
