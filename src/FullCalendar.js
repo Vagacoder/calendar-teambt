@@ -14,7 +14,6 @@ import "./css/timeGrid.css";
 import "./css/override.css";
 
 const timeZoneString = "local";
-const timeFormatString = "MMMM DD YYYY";
 
 const eventTimeFormat = {
   hour: "numeric",
@@ -29,6 +28,23 @@ const headers = {
 };
 
 const plugins = [dayGridPlugin, timeGridPlugin, momentPlugin];
+
+const setColumnHeaderHtml = (date) => {
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  let weekday = date.getDay();
+  let weekdayString = "";
+  if (weekday === 0) { weekdayString = "SUN"; }
+  else if (weekday === 1) { weekdayString = "MON"; }
+  else if (weekday === 2) { weekdayString = "TUE"; }
+  else if (weekday === 3) { weekdayString = "WED"; }
+  else if (weekday === 4) { weekdayString = "THU"; }
+  else if (weekday === 5) { weekdayString = "FRI"; }
+  else { weekdayString = "SAT"; }
+
+  return `<div style="line-height: 75%;"><span style="font-size: 0.85em;">${weekdayString}</span><br />
+  <span style="font-size: 0.85em;">${month}/${day}</span></div>`;
+}
 
 
 const useStyles = makeStyles((theme) => {
@@ -85,6 +101,7 @@ const FullCalendar = props => {
   return <FullCalendarReact
     aspectRatio={3}
     allDayText="Whole Day"
+
     defaultView="dayGridMonth"
     eventClick={onClickEvent}
     eventLimit={true}
@@ -102,7 +119,21 @@ const FullCalendar = props => {
     plugins={plugins}
     scrollTime='09:00:00'
     timeZone={timeZoneString}
-    titleFormat={timeFormatString}
+    views={
+      {
+        dayGridMonth: {
+          titleFormat: { year: 'numeric', month: 'short' }
+        },
+        timeGridWeek: {
+          titleFormat: { year: 'numeric', month: 'short', day: '2-digit' },
+          columnHeaderFormat: { month: '2-digit', day: '2-digit', weekday: 'short', omitCommas: true },
+          columnHeaderHtml: setColumnHeaderHtml,
+        },
+        timeGridDay: {
+          titleFormat: { year: 'numeric', month: 'short', day: '2-digit' }
+        }
+      }
+    }
   />
 }
 

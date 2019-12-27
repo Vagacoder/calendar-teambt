@@ -141,6 +141,7 @@ const ThemeController = (props) => {
             themes.map((theme, index) => {
               return (
                 <FormControlLabel
+                  key={index}
                   value={index}
                   control={<Radio />}
                   label={`Theme${index + 1}`}
