@@ -32,9 +32,13 @@
       .fc-content{
         font-size: 0.85em;
       }
+    
+      /* decrease week view header height */
+      .fc-day-header.fc-widget-header div{
+        line-height: 95% !important;
+      }
 
-
-    /* decrease the row height */
+    /* increase the row height to avoiding dates overlapping weekdays*/
     .fc-dayGrid-view .fc-body .fc-row {
         min-height: 0;
         height: 3em !important;
