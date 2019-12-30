@@ -42,8 +42,8 @@ const setColumnHeaderHtml = (date) => {
   else if (weekday === 5) { weekdayString = "FRI"; }
   else { weekdayString = "SAT"; }
 
-  return `<div style="line-height: 75%;"><span style="font-size: 0.85em;">${weekdayString}</span><br />
-  <span style="font-size: 0.85em;">${month}/${day}</span></div>`;
+  return `<div style="line-height: 85%;"><span style="font-size: 0.78em;">${weekdayString}</span><br />
+  <span style="font-size: 0.78em;">${month}/${day}</span></div>`;
 }
 
 
