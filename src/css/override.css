@@ -12,7 +12,7 @@
 /* for small and medium size screen */
 @media only screen and (max-width:800px) {
     .fc{
-        min-width: 18em;
+        min-width: 15em !important;
         width: 60%;
       }
       .fc-toolbar.fc-header-toolbar  {
