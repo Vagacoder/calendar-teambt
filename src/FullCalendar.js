@@ -4,7 +4,7 @@ import momentPlugin from "@fullcalendar/moment";
 import FullCalendarReact from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 
 import "./css/calendar.css";
